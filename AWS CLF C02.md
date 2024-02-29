@@ -47,7 +47,72 @@ Vários graus de suporte:
 Controle de usuários, grupos, permitir grupos ou um usuário especifico a fazer determinada ação baseada em uma politica que foi cedida por um Admin ou pelo ROOT.  Além disso, tem o Roles, alguma máquina tem acesso a outra máquina que foi habilitado por uma função.
 
 ##### IAM Identity Center 
-Permite também associar aplicações, acessar provedores de e-mail ou software da empresa. 
+Permite também associar aplicações, acessar provedores de e-mail ou software da empresa.  Adicionar usuários para usar uma aplicação que dentro da AWS.
 
 ##### MFA
 E verificação de duas etapas, serve para aumentar a segurança da conta. 
+
+##### AWS Organization
+Usado para criação de subcontas (organizações), para gerenciar outros tipos de projetos.
+Permite: 
+- **Gerenciamento Centralizado de Contas**
+- **Controle de Acesso Hierárquico**
+- **Políticas de Controle de Serviço**
+- **Junção da cobrança em um lugar**
+- **Automação**
+
+##### Políticas de Senha
+E possível alterar a política de criação de senha.
+
+##### Outras maneiras de acessar: CloudShell e CLI
+CLI - Facilita a utilização de Scripts. Feito usando um software usando suas credenciais da AWS.
+Requer:
+- Acess Key;
+- Private Key.
+SDK - Quando uma aplicação precisa se comunicar com a AWS, tambem precisa de Acess key e Private key.
+CloudShell - Maquina Linux qual a AWS oferece, permitindo uso do console pelo site da AWS.
+
+##### IAM Credential Report e Acess Advisor
+
+Credential Report - Mostra quando os usuários foram criados, ultimo login, ultima senha trocada, MFA ativado ou não.
+Acess Advisor - Mostra quais serviços permitidos para devido usuário. 
+AWS CloudTrail - Permite registrar todas as ações de um usuário para auditoria.  
+
+#### Estrutura da AWS
+
+##### Infraestrutura global 
+
+Uma região contem data centers, que são divididos em zonas de disponibilidade.
+
+Zonas locais(AZs) - E uma zona menor que conecta a um Data Center, para regiões que estão longe de um data center.
+
+Wavelength - Usado normalmente por desenvolvedores, tem uma latência muito menor e por consequência vai ter uma conexão mais rápida. 
+
+Outposts - E como se fosse um mini data center, colocado em um lugar especifico que não tem interesse em colocar uma zona local.
+
+##### AWS Share Responsibility Model 
+
+Você tem uma parte da responsabilidade sobre a sua cloud, nem tudo vai ser culpa da AWS.
+
+Customer - Dados inseridos, aplicação, cuidar dos usuarios, conexões e configurações de firewall, trafego de rede, encriptação de dados no client-side.
+
+AWS - Software e Hardware.
+
+#### EC2 (IAAS)
+
+Elastic coumput cloud. E um Cluster de servidores que funciona para criarmos instancia de determinado sistemas operacional.
+
+##### Tipos de EC2
+
+##### Modelos de preço
+
+Cobrança baseada em segundos, transferência de arquivos para fora da AWS, determinado hardware com maior qualidade, IP estático.
+
+AWS Calculator - Usado para calcular quanto pagara por uma instancia. 
+
+Modelos de aquisição:
+- Sob demanda - Caro, começa instantaneamente;
+- Saving plans - Barato, contrato de longo prazo (1 a 3 anos);
+- Spot - Barato, mas pode ser encerrado sem a sua permissão, pois caso a AWS precisar ela vai usar o que você esta ocupando;
+- Host dedicado - Muito caro, privado;
+- Capacidade por demanda - Médio, especifica todo o hardware necessário a partir de tal dia ate outro determinado dia.
